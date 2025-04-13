@@ -6,7 +6,7 @@ from .models import User, Team, Activity, Leaderboard, Workout
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = 'http://localhost:8000/'
+    base_url = 'https://musical-space-halibut-4w9pp465552vq7-8000.app.github.dev/' if request.get_host() == 'musical-space-halibut-4w9pp465552vq7-8000.app.github.dev' else 'http://localhost:8000/'
     return Response({
         'users': base_url + 'api/users/',
         'teams': base_url + 'api/teams/',
